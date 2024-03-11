@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Set full height for the body and HTML */
+        body, html {
+            height: 100%;
+            margin: 0;  
+            scroll-snap-type: y mandatory;
+        }
+
+        /* Navigation bar styles */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.01);
+            backdrop-filter: blur(5px);
+            padding: 1rem;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            color: hsla(0, 0%, 0%, 0.703);
+            font-weight: bold;
+            position: absolute;
+            top: 0;
+            right: 0;
+            min-width: 100vw;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 1.2rem;
+        }
+
+        .navbar-link {
+            text-decoration: none;
+            font-size: 1.4rem;
+        }
+
+        /* Define utility classes for each panel */
+        .panel {
+            height: 100vh; /* Full height of the viewport */
+            width: 100%; /* Full width of the viewport */
+            background-size: cover;
+             /* Cover the entire panel with the background image */
+            display: flex;
+            align-items: center;
+            color: #fff; /* Text color */
+            background-position: center;
+            scroll-snap-align: center;
+            scroll-snap-stop: always;
+        }
+
+        /* Background images for each panel */
+        .panel-1 {
+            background-image: url('https://images.aeonmedia.co/images/78ba87e7-7198-4468-81b5-500c505d5bc8/essay-gettyimages-1237093074.jpg'); /* Replace with your image URL */
+            background-color: black;
+        }
+
+        .panel-2 {
+            background-color: black;
+        }
+
+        .panel-3 {
+            background-image: url('https://images.aeonmedia.co/images/78ba87e7-7198-4468-81b5-500c505d5bc8/essay-gettyimages-1237093074.jpg'); /* Replace with your image URL */
+            background-color: black;
+        }
+
+        .text-left {
+            margin-left: 3vw;
+            
+        }
+
+        .about-text {
+            position: absolute;
+            top: 105%;
+            left: 5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="panel panel-1">
+        <div class="navbar">
+            <div class="navbar-links">
+                <a href="#" class=" navbar-link">Home</a>
+                <a href="#" class=" navbar-link">Portfolio</a>
+                <a href="#" class=" navbar-link">About</a>
+                <a href="#" class=" navbar-link">Contact</a>
+            </div> 
+        </div>
+        <div class="text-left">
+            <h4 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl">Vaishnavi Sarang</h4>
+            <p class="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl">Sophomore, Product Design</p>
+        </div>
+    </div>
+    
+
+    <div class="panel panel-2">
+        <div class="text-left">
+            <h1 class="about-text text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl">About Me</h1>
+        </div>
+    </div>
+
+    <div class="panel panel-3">
+        <h1 class="text-4xl">Panel 3 Content</h1>
+    </div>
+
+    <script>
+        // Add any additional JavaScript if needed
+    </script>
+</body>
+
+</html>
