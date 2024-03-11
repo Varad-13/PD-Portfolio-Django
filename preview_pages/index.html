@@ -37,6 +37,11 @@
         .navbar-link {
             text-decoration: none;
             font-size: 1.2rem;
+            transition-duration: 300ms;
+        }
+
+        .navbar-link:hover {
+            font-size: 1.21rem;
         }
 
         /* Define utility classes for each panel */
@@ -59,14 +64,18 @@
         }
 
         .panel-2 {
-            background-image: url('https://www.sciencefriday.com/wp-content/uploads/2019/04/blackhole.jpg');
+            background-image: url('https://cms.bbcearth.com/sites/default/files/2021-10/Cover-image_Black_Hole_Universe_04_004.jpg');
             background-color: black;
+            opacity: 120%;
         }
 
         .panel-3 {
             background-image: url('https://cdn.mos.cms.futurecdn.net/HsDtpFEHbDpae6wBuW5wQo-970-80.jpg.webp');
             background-color: black;
-            
+        }
+
+        .panel-4 {
+            background-color: black;
         }
 
         .text-left {
@@ -99,7 +108,8 @@
         }
 
         .about-description {
-            max-width: 45vw;
+            background-color: rgba(0, 0, 0, 0.13);
+            backdrop-filter: blur(70px);
         }
 
     </style>
@@ -109,14 +119,14 @@
 
     <div class="navbar overflow-auto">
         <div class="navbar-links">
-            <a href="#" class=" navbar-link">Home</a>
-            <a href="#" class=" navbar-link">Portfolio</a>
-            <a href="#" class=" navbar-link">About</a>
-            <a href="#" class=" navbar-link">Contact</a>
+            <a href="#home" class=" navbar-link">Home</a>
+            <a href="#about" class=" navbar-link">About</a>
+            <a href="#portfolio" class=" navbar-link">Portfolio</a>
+            <a href="#contact" class=" navbar-link">Contact</a>
         </div> 
     </div>
 
-    <div class="panel panel-1 flex items-center h-screen">
+    <div id="home" class="panel panel-1 flex items-center h-screen">
         
         <div class="text-left">
             <h4 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl">Vaishnavi Sarang</h4>
@@ -124,26 +134,15 @@
         </div>
     </div>
 
-    <div class="panel panel-2 flex justify-center items-center h-screen">
+    <div id="about" class="panel panel-2 flex justify-center items-center h-screen">
         <div class="text-left">
             <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl">About Me</h1>
             <div class="content grid grid-cols-2 gap-8 items-center">
                 <p class="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
                     Sophomore, Product DesignSophomore, Product DesignSophomore, Product DesignSophomore, Product DesignSophomore, Product Design
-                    Sophomore, Product DesignSophomore, Product DesignSophomore, Product DesignSophomore, Product DesignSophomore, Product Design
-                    Sophomore, Product DesignSophomore, Product DesignSophomore, Product DesignSophomore, Product DesignSophomore, Product Design
-                    Sophomore, Product DesignSophomore, Product DesignSophomore, Product Design
+                    
                 </p>
                 <div class="flex flex-col items-center">
-                    <h1 class=" text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
-                        Sophomore, Product Design
-                    </h1>
-                    <h1 class=" text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
-                        Sophomore, Product Design
-                    </h1>
-                    <h1 class=" text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
-                        Sophomore, Product Design
-                    </h1>
                     <h1 class=" text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
                         Sophomore, Product Design
                     </h1>
@@ -158,7 +157,7 @@
         </div>
     </div>
 
-    <div class="panel panel-3 flex justify-center items-center h-screen">
+    <div id="portfolio" class="panel panel-3 flex justify-center items-center h-screen">
         <div class="text-left">
             <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl">Portfolio</h1>
             <div class="content grid grid-cols-4 gap-4 items-center">
@@ -194,11 +193,30 @@
         </div>
     </div>
 
+    <div id="contact" class="panel panel-4 flex justify-center items-center h-screen">
+        <div class="text-left">
+            <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl">Get In Touch</h1>
+            <div class="content grid grid-cols-2 gap-8 items-center">
+                <div class="flex flex-col items-center">
+                    <h1 class=" text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
+                        Coming Soon
+                </div>  
+            </div>
+        </div>
+    </div>
     
 
     <script>
-        // Add any additional JavaScript if needed
-    </script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+    
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>    
 </body>
 
 </html>
