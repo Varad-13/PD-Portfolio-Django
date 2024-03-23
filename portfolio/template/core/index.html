@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Set full height for the body and HTML */
+        body, html {
+            height: 100%;
+            margin: 0;  
+            scroll-snap-type: y mandatory;
+            background-color: black;
+        }
+
+        .start {
+            background-image: url('assets/blackhole1.png');
+            background-color: black;
+            background-repeat: no-repeat;
+            background-position-x: -25rem;
+            background-position-y: 25rem;
+        }
+
+        /* Navigation bar styles */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.125);
+            backdrop-filter: blur(5px);
+            padding: 1rem;
+            display: flex;
+            justify-content: right; /* Adjusted alignment */
+            align-items: center;
+            color: hsl(0, 0%, 100%);
+            font-weight: bold;
+            position: fixed; /* Fixed position to stay at the top */
+            top: 0;
+            right: 0;
+            min-width: 100vw;
+            z-index: 9999;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 1.2rem;
+        }
+
+        .navbar-link {
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition-duration: 300ms;
+        }
+
+        .navbar-link:hover {
+            font-size: 1.21rem;
+        }
+
+        /* Define utility classes for each panel */
+        .panel {
+            min-height: 100vh; /* Full height of the viewport */
+            width: 100%; /* Full width of the viewport */
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            color: #fff; /* Text color */
+            background-position: center;
+            scroll-snap-align: center;
+            scroll-snap-stop: always;
+            overflow-y: auto;
+        }
+
+        .panel-1 {
+            background-image: url('assets/blackhole1.png');
+            background-repeat: no-repeat;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        .panel-2 {
+            
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .panel-3 {
+            
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .panel-4 {
+            background-image: url('https://wallpaperwaifu.com/wp-content/uploads/2021/06/ariane-5-rocket-launch-thumb.jpg');
+            background-color: black;
+        }
+
+        .text-left {
+            margin-left: 3vw;
+            max-height: 100vh;
+        }
+
+        .content {
+            max-width: 75vw;
+            max-height: 75vh;
+            padding-right: 2rem;
+            padding-top: 2rem;
+        }
+
+        .card {
+            background-color: rgba(0, 0, 0, 0.16);
+            backdrop-filter: blur(2px);
+            border-radius: 1rem;
+            transition-duration: 300ms;
+            border-color: white;
+            border-width: 0.1rem;
+        }
+
+        .card:hover {
+            background-color: rgba(0, 0, 0, 0.404);
+            backdrop-filter: blur(20px);
+            border-radius: 0rem;
+            .thumbnail {
+                max-height: 100%;
+                width: 100%;
+                padding: 0rem;
+                border-radius: 0rem;
+            }
+            .cardText{
+                font-size: 1.01rem;
+            }
+        }
+
+        .thumbnail{
+            padding: 1.2rem;
+            transition-duration: 300ms;
+            border-radius: 2rem;
+        }
+
+        .about-description {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .contact {
+            background: -webkit-linear-gradient(transparent, rgba(255, 255, 255, 0.3));
+            transform: scale(1, -1);
+            display: inline-block;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: blur(1px);
+        }
+
+        .reflection {
+            position: relative;
+            top: -3.5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar overflow-auto">
+        <div class="navbar-links">
+            <a href="#home" class=" navbar-link">Home</a>
+            <a href="#about" class=" navbar-link">About</a>
+            <a href="#portfolio" class=" navbar-link">Portfolio</a>
+            <a href="#contact" class=" navbar-link">Contact</a>
+        </div> 
+    </div>
+
+    <div class="start">
+        <div id="home" class="panel panel-1 flex items-center h-screen">
+            <div class="text-left">
+                <p class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl"><span id="typewriter"></span></p>
+                <h4 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl">I'm Vaishnavi Sarang</h4>
+                <p class="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl">Product Designer</p>
+            </div>
+        </div>
+    
+        <div id="about" class="panel panel-2 flex justify-center items-center h-screen">
+            <div class="text-left">
+                <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl">About me</h1>
+                <div class="content md:flex md:flex-row lg:grid lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <p class="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl">Hi There! I'm Vaishnavi<span id="cursor"></span></p>
+                        <p class="about-description sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
+                            I'm currently a sophomore in product design at Atlasskilltech University. I'm a curious, adventurous, fond learner of new things, new experiences and am exceedingly passionate in product design and also proficient at multi-tasking. I am always enthusiastic when it comes to expanding my skills. I'm looking forward to opportunities which can help me grow as a designer and as an individual all in the pursuit of constantly evolving my undying passion in creativity, skill and knowledge.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center">
+                        
+                    </div>  
+                </div>
+            </div>
+        </div>
+    
+        <div id="portfolio" class="panel panel-3 flex justify-center items-center h-screen">
+            <div class="text-left ">
+                <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl mb-4">Portfolio</h1>
+                <div class="content md:flex md:flex-row lg:grid lg:grid-cols-4 gap-4">                
+                    <a href=project1.html>
+                        <div class="card flex flex-col mb-4 items-center">
+                            <img class="thumbnail" src="assets/projects/thumbnail1.png" alt="Card Image" style="padding-bottom:1rem"> 
+                            <p class="text-sm text-center sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">Sports car mirror</p>
+                            <p class="">
+                                Nature and Form studies
+                            </p>
+                            <p class="" style="margin:1rem">
+                                Learning by taking inspiration from fennec fox. Conducting study on the animal to design form inspired by fennec fox with funcionality
+                            </p>
+                        </div> 
+                    </a>
+                    <a href=project2.html>
+                        <div class="card flex flex-col mb-4 items-center">
+                            <img class="thumbnail" src="assets/projects/thumbnail2.png" alt="Card Image" style="padding-bottom:1rem"> 
+                            <p class="text-sm text-center sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">Bridged</p>
+                            <p class="">
+                                UIUX Design for a mobile app
+                            </p>
+                            <p class="" style="margin:1rem">
+                                Bridged is a solution designed that aims to enhance the patient experience and enables them to efficiently manage their healthcare records securely in one place.
+                            </p>
+                        </div> 
+                    </a>
+                    <a href=project3.html>
+                        <div class="card flex flex-col mb-4 items-center">
+                            <img class="thumbnail" src="assets/projects/thumbnail3.png" alt="Card Image" style="padding-bottom:1rem"> 
+                            <p class="text-sm text-center sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">Space Models</p>
+                            <p class="">
+                                Blender 3d Model
+                            </p>
+                            <p class="" style="margin:1rem">
+                                Here’s 3d models created by me on Blender. Space has always fascinated me. This is my try re-creating the beauty above and beyond us.
+                            </p>
+                        </div> 
+                    </a>
+                    <a href=project4.html>
+                        <div class="card flex flex-col mb-4 items-center">
+                            <img class="thumbnail" src="assets/projects/thumbnail4.png" alt="Card Image" style="padding-bottom:1rem"> 
+                            <p class="text-sm text-center sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">Wooden Lamp</p>
+                            <p class="">
+                                Material exploration
+                            </p>
+                            <p class="" style="margin:1rem">
+                                The wooden lamp is designed to give a wide variety of adjustments for the user to interact with it. The flexibility of the lamp to change according to user needs keeps it interesting.
+                            </p>
+                        </div> 
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="start">
+        <div id="contact" class="panel panel-4 flex flex-row items-center justify-center">
+            <div class="">
+                <div class="card bg-gray-200 p-6 lg:p-8 rounded shadow-lg mt-5" style="min-width: 27vw;">
+                    <form action="#" method="POST">
+                        <h4 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl mb-4">Get in Touch</h4>
+                        <div class="mb-4">
+                            <label for="sender-email" class="block text-sm font-medium">Sender Email</label>
+                            <input type="email" id="sender-email" name="sender-email" class="text-black mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50">
+                        </div>
+                        <div class="mb-4">
+                            <label for="sender-email" class="block text-sm font-medium">Sender Name</label>
+                            <input type="email" id="sender-name" name="sender-name" class="text-black mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50">
+                        </div>
+                        <div class="mb-4">
+                            <label for="alt-email" class="block text-sm font-medium">Alternate Email</label>
+                            <input type="email" id="alt-email" name="alt-email" class="text-black mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50">
+                        </div>
+                        <div class="mb-4">
+                            <label for="contact-us" class="block text-sm font-medium">Contact Us</label>
+                            <input type="text" id="contact-us" name="contact-us" class="text-black mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50">
+                        </div>
+                        <div class="mb-4">
+                            <label for="subject" class="block text-sm font-medium">Subject</label>
+                            <input type="text" id="subject" name="subject" class="text-black mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50">
+                        </div>
+                        <div class="mb-4">
+                            <label for="purpose" class="block text-sm font-medium">Purpose</label>
+                            <select id="purpose" name="purpose" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 text-black">
+                                <option value="inquiry">chapa chapa</option>
+                                <option value="feedback">chipi chipi 2</option>
+                                <option value="support">bow bow</option>
+                                <option value="support">meow meow</option>
+                            </select>                            
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-sm font-medium text-white">Message</label>
+                            <textarea id="message" name="message" rows="4" class="text-black mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"></textarea>
+                        </div>
+                        <div class="mt-6">
+                            <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-500 focus:ring-opacity-50">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+
+    
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+    
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/TypewriterJS/2.13.1/core.min.js"></script>
+    <script>
+    new Typewriter('#typewriter', {
+        strings: [' Hello!', ' היי!', ' שלום!', ' 你好!', ' Bună!', ' नमस्ते!', ' こんにちは!', ' 안녕!', ' Hi!',],
+        autoStart: true,   
+        loop: true,
+    });
+    new Typewriter('#cursor', {
+        strings: [''],
+        autoStart: true,   
+        loop: true,
+    });
+    </script>
+</body>
+
+</html>
