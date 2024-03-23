@@ -10,6 +10,13 @@ class Project(models.Model):
     thumbnail = models.ImageField(upload_to='thumbnails/')
     webrender = models.ImageField(upload_to='webrenders/')
     is_top = models.BooleanField(default=False)
+    slug = models.SlugField()
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = str(self.id)
+        super(Project, self).save(*args, **kwargs)
+
 
 class Enquiry(models.Model):
     sender_name = models.CharField(max_length=255)
@@ -34,3 +41,4 @@ class Home(models.Model):
     panel_3_image = models.ImageField(upload_to='thumbnails/')
     panel_4_image = models.ImageField(upload_to='thumbnails/')
     about_description = models.CharField(max_length=255)
+    
