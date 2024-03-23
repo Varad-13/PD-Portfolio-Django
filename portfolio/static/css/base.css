@@ -1,0 +1,144 @@
+/* Set full height for the body and HTML */
+body,
+html {
+    height: 100%;
+    margin: 0;
+    scroll-snap-type: y mandatory;
+    background-color: black;
+}
+
+.start {
+    background-image: url('assets/blackhole1.png');
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position-x: -25rem;
+    background-position-y: 25rem;
+}
+
+/* Navigation bar styles */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.125);
+    backdrop-filter: blur(5px);
+    padding: 1rem;
+    display: flex;
+    justify-content: right; /* Adjusted alignment */
+    align-items: center;
+    color: hsl(0, 0%, 100%);
+    font-weight: bold;
+    position: fixed; /* Fixed position to stay at the top */
+    top: 0;
+    right: 0;
+    min-width: 100vw;
+    z-index: 9999;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.navbar-link {
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition-duration: 300ms;
+}
+
+.navbar-link:hover {
+    font-size: 1.21rem;
+}
+
+/* Define utility classes for each panel */
+.panel {
+    min-height: 100vh; /* Full height of the viewport */
+    width: 100%; /* Full width of the viewport */
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    color: #fff; /* Text color */
+    background-position: center;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    overflow-y: auto;
+}
+
+.panel-1 {
+    background-image: url('assets/blackhole1.png');
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.panel-2 {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.panel-3 {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.panel-4 {
+    background-image: url('https://wallpaperwaifu.com/wp-content/uploads/2021/06/ariane-5-rocket-launch-thumb.jpg');
+    background-color: black;
+}
+
+.text-left {
+    margin-left: 3vw;
+    max-height: 100vh;
+}
+
+.content {
+    max-width: 75vw;
+    max-height: 75vh;
+    padding-right: 2rem;
+    padding-top: 2rem;
+}
+
+.card {
+    background-color: rgba(0, 0, 0, 0.16);
+    backdrop-filter: blur(2px);
+    border-radius: 1rem;
+    transition-duration: 300ms;
+    border-color: white;
+    border-width: 0.1rem;
+}
+
+.card:hover {
+    background-color: rgba(0, 0, 0, 0.404);
+    backdrop-filter: blur(20px);
+    border-radius: 0rem;
+}
+
+.card:hover .thumbnail {
+    max-height: 100%;
+    width: 100%;
+    padding: 0rem;
+    border-radius: 0rem;
+}
+
+.card:hover .cardText {
+    font-size: 1.01rem;
+}
+
+.thumbnail {
+    padding: 1.2rem;
+    transition-duration: 300ms;
+    border-radius: 2rem;
+}
+
+.about-description {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.contact {
+    background: -webkit-linear-gradient(transparent, rgba(255, 255, 255, 0.3));
+    transform: scale(1, -1);
+    display: inline-block;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: blur(1px);
+}
+
+.reflection {
+    position: relative;
+    top: -3.5rem;
+}
